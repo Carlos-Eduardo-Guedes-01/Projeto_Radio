@@ -4,4 +4,4 @@ from .models import Radio
 class RadioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Radio
-        fields = ['Nome','Frequencia','Logo','Link']
+        fields = ['Nome','Frequencia','Logo','Link', 'Whatsapp']

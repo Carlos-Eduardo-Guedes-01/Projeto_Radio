@@ -5,6 +5,10 @@ from .models import Radio
 from .serializers import RadioSerializer
 from PIL import Image
 
+from rest_framework import viewsets
+from rest_framework.exceptions import ValidationError
+from rest_framework.response import Response
+
 class RadioViewSet(viewsets.ModelViewSet):
     queryset = Radio.objects.all()
     serializer_class = RadioSerializer
@@ -21,11 +25,16 @@ class RadioViewSet(viewsets.ModelViewSet):
             Nome=dados_formulario['Nome'],
             Frequencia=dados_formulario['Frequencia'],
             Logo=dados_formulario['Logo'],
-            Link=dados_formulario['Link']
+            Link=dados_formulario['Link'],
+            Whatsapp=dados_formulario['Whatsapp']
         )
 
         if insercao:
             return Response('Dados Cadastrados!')
+    def delete(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        queryset.delete()
+        return Response('Todos os objetos Radio foram excluídos com sucesso!')
 class Validacao:
     def ValidaImagem(self, imagem):
         if imagem is None:
