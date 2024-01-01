@@ -1,0 +1,29 @@
+# Arquivos e diretórios gerados pelo Django
+*.pyc
+__pycache__/
+myproject/__pycache__/
+db.sqlite3
+media/
+
+# Arquivos e diretórios específicos do ambiente de desenvolvimento
+.env
+*.env
+
+# Arquivos de configuração local
+myproject/settings_local.py
+
+# Arquivos de registro
+*.log
+
+# Diretório de instalação do Python
+venv/
+
+# Arquivos gerados pelo editor de código
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos de backup
+*~
+*.bak

@@ -5,9 +5,6 @@ from .models import Radio
 from .serializers import RadioSerializer
 from PIL import Image
 
-from rest_framework import viewsets
-from rest_framework.exceptions import ValidationError
-from rest_framework.response import Response
 
 class RadioViewSet(viewsets.ModelViewSet):
     queryset = Radio.objects.all()
@@ -26,7 +23,8 @@ class RadioViewSet(viewsets.ModelViewSet):
             Frequencia=dados_formulario['Frequencia'],
             Logo=dados_formulario['Logo'],
             Link=dados_formulario['Link'],
-            Whatsapp=dados_formulario['Whatsapp']
+            Whatsapp=dados_formulario['Whatsapp'],
+            Email=dados_formulario['Email']
         )
 
         if insercao:

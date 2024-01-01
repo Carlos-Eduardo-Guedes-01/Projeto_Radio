@@ -6,5 +6,6 @@ class Radio(models.Model):
     Logo = models.FileField(upload_to='static/images')
     Link = models.CharField(max_length=255)
     Whatsapp = models.IntegerField(null=True,default=None)
+    Email = models.EmailField(null=True)
     def __str__(self):
         return self.Nome

@@ -21,10 +21,11 @@ from django.conf.urls.static import static
 from rest_framework import routers
 from radio.views import *
 from programacao.views import *
-
+from equipe.views import *
 router=routers.DefaultRouter()
 router.register('CadastroRadio',RadioViewSet, basename='Radios')
 router.register('api/programacoes', ProgramacaoViewSet, basename='Programacao')
+router.register('Cadastra-equipe', EquipeViewSet, basename='Equipe')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
